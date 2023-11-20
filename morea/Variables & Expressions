@@ -1,0 +1,41 @@
+Variables are named items which hold value and can be used throughout the program. Examples of variables include ‘x’ or ‘num_items.’
+
+Assigned statements are variables which are assigned with a value, such as ‘x=10,’ ‘y=10-5’, or ‘z=x.’ 
+
+Common misconceptions are that the ‘=’ sign is the same as equals in a mathematical sense. This is incorrect. Rather, ‘=’ is an assignment and is used to assign value to a variable. Because of this, the left side of the ‘=’ should be a variable rather than an expression. An example of an incorrect use of ‘=’ is: y+2=3 because you are not solving an equation and the left side must always be a singular variable. However, if you want to set it up as an equation with the variable on the left then doing so is allowed under these circumstances. Example: ‘x=5’ and’ y=5+x then y would now be 10 because the value of the variable ‘x’ was used. 
+
+When using variables, it is important to note that as the program is read variables can be rewritten. If in your program you reuse the variable x such as, ‘x=1,’ ‘x=2,’ ‘x=3,’ then the value of x is 3 and the previous uses of x have been overwritten. This is why it is important to use variables that have meaning and will be easy to remember further along in your code. 
+
+This process is helpful when needing to increment a variable. Incrementing a variable is adding ‘1’ to the value of the variable. This means ‘x=x+1’ which can be done numerous times to get values such as: 1, 2, 3, 4, 5, etc… 
+
+
+
+Identifiers, or names, are more sophisticated than variables that start with either a letter or underscore (can not start with a number) and can contain letters, underscores, and digits. As a reminder, Python is case sensitive so the identifier ‘person_name123’ is a different identifier than ‘Person_Name123.’
+
+Programmers should refrain from using double underscores for identifiers (‘__phrase__’) because this often has other uses and will be elaborated on more later.
+
+Other identifiers that cannot be used are reserved words or keywords which already hold value in Python. Reserved words are shown in the table below:
+
+
+False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+
+
+
+
+
+
+
+Name binding is a term used for manipulating identifiers. This can be done to combine identifiers into a new name. For example, if you want to input each student’s grade individually but want a name called total grades you can do so by this method. See below for an example:
+Amy = 95
+Bill = 90
+Cam = 100
+Class_Size = 3
+Grades_Sum = Amy + Bill + Cam
+Class_Average = Grades_Sum / Class_Size
+

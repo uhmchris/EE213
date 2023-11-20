@@ -1,0 +1,20 @@
+1. Understand the problem
+- What is this program supposed to do?
+- What kind of information is it given? (What is the input?)
+- What kind of results is it to produce? (What is the output?)
+- What formulas or techniques will be needed?
+
+2. Do a small example by hand
+- Create a small example(s) of what the program should do
+- Solve these examples and keep in mind the questions from step 1.
+
+3. Write an algorithm for solving the problem
+- Remember that each line of code is sequentially executed
+- Your algorithm must include all the steps sequentially to arrive at a solution
+- Algorithm Design Example
+
+4. Translate the algorithm into a programming language (like python, C, C++, JavaScript, Java...etc)
+
+5. Test the program
+
+Credit: Professor Chris Manloloyo, UH Manoa
