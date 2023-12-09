@@ -1,6 +1,6 @@
 ---
 title: "Module Loops"
-published: true
+published: false
 morea_coming_soon: false
 morea_id: module-loops
 morea_prerequisites:
