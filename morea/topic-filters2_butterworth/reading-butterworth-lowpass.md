@@ -94,15 +94,15 @@ That yields a transfer function of
 \\[H = \frac{1}{C_1 C_2 s^2 + 2 C_2s + 1}.\\]
 
 This allows us to represent the trinomials in the required Butterworth transfer
-function. Now, we are able to select component values to yield the desired
-Butterworth filter's transfer function
+function. We are now able to select component values to yield the desired
+Butterworth filter's transfer function.
 
 ## Determining component values.
 
 We already know that the RC circuit representing the binomial requires
 component values of \\(1\,\Omega\\) and \\(1\,\mathrm{F}\\). The trinomials
 require a small amount of work, however. Let \\(\alpha\\) represent the
-coefficient of \\(s\\), and let's compare the \\(\alpha=0.618\\) trinomial with
+coefficient of \\(s\\), and let's compare an \\(\alpha\\) trinomial with
 the Sallen-Key lowpass configuration.
 
 \\[\frac{1}{1 + \alpha s + s^2}\ \mathrm{vs.}\ \frac{1}{C_1 C_2 + 2C_2 s +
@@ -143,9 +143,9 @@ base frequency is \\(1\,\mathrm{rad/s}\\) and our target frequency is
 \\(15\,\mathrm{kHz} = 9.42 \times 10^{4} \mathrm{rad/s}\\), we just have to
 divide our capacitors by \\(9.42 \times 10^{4}\\). Our resistors will remain
 unchanged, but our new capacitor values will then be as follows:
-+ a \\(1.06 \times 10^{-5}\,\mathrm{F}\\) capacitor for the RC circuit,
-+ \\(C_2 = 3.28 \times 10^{-6}\,\mathrm{F}\\) and \\(C_1 = 3.44 \times 10^{-5}\,\mathrm{F}\\) capacitors for the \\(\alpha=0.618\\) Sallen-Key, and
-+ \\(C_2 = 8.59 \times 10^{-6}\,\mathrm{F}\\) and \\(C_1 = 1.32 \times 10^{-5}\,\mathrm{F}\\) capacitors for the \\(\alpha=1.618\\) Sallen-Key.
++ \\(C_2 = 3.28 \times 10^{-6}\,\mathrm{F}\\) and \\(C_1 = 3.43 \times 10^{-5}\,\mathrm{F}\\) capacitors for the \\(\alpha=0.618\\) Sallen-Key,
++ \\(C_2 = 8.58 \times 10^{-6}\,\mathrm{F}\\) and \\(C_1 = 1.31 \times 10^{-5}\,\mathrm{F}\\) capacitors for the \\(\alpha=1.618\\) Sallen-Key, and
++ a \\(1.06 \times 10^{-5}\,\mathrm{F}\\) capacitor for the RC circuit.
 
 Now that we have our final component values, all we have to do here is draw out
 the circuit with the correct component values, as seen below:
