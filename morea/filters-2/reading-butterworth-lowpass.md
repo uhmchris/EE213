@@ -32,13 +32,15 @@ Let's begin by considering how our circuit would look like.
 For our convenience, here's the table of normalized Butterworth denominator
 coefficients for orders 1 to 10.
 
-<img src="filter-den.png" alt="Butterworth Filter Denominators" width="800"/>
+<!--The HTML below allows conditional display of images between light and dark mode.-->
+<!-- HTML also allows for manually specified widths of images. -->
+<!-- HTML just allows for more control of content in general. -->
 
-<!--The image here has a transparent white background, which allows for
-adaptability to different background colors, but becomes hard-to-read with dark
-themes and the like.-->
-<!--Image imports usually use `![alt_text](image_file)`, but html allows for
-width specification, which allows downscaling of large images.-->
+<picture>
+  <source srcset="./assets/filter-den-dark.png" media="(prefers-color-scheme: dark)" width="100%">
+  <source srcset="./assets/filter-den-light.png" media="(prefers-color-scheme: light)" width="100%">
+  <img src="./assets-filter-den-light.png" width="100%">
+</picture>
 
 As we are dealing with an \\(5^\mathrm{th}\\) order lowpass frequency, the table
 gives us a transfer function of
@@ -51,7 +53,7 @@ Note that the above transfer function can be written as a product of three
 different rational expressions:
 
 \\[
-H = \frac{1}{1+s} \frac{1}{1+0.618s+s^2} \frac{1}{1+1.618s+s^2}.
+H = \frac{1}{1+s} \frac{1}{1+0.618s+s^2} \frac{1}{1+1.618s+s^2} = H_1 H_2 H_3
 \\]
 
 A product of circuits' transfer functions is equivalent to running those
@@ -61,5 +63,15 @@ when connected --- create the full Butterworth filter circuit.**
 
 ### Sub-circuit for a binomial: an RC circuit.
 
-There's a myriad of configurations that will yield a transfer function of
-\\(\frac{1}{1+s}\\).
+There's a myriad of configurations that will yield a transfer function \\(H_1 =
+\frac{1}{1+s}\\), but one of the simplest configurations available for us would
+be a simple RC circuit, with a voltage follower placed in between the resistor
+and capacitor and components values of 1.
+
+<picture>
+  <source srcset="./assets/rc-circuit-dark.png" media="(prefers-color-scheme: dark)" width="100%">
+  <source srcset="./assets/rc-circuit-light.png" media="(prefers-color-scheme: light)" width="100%">
+  <img src="./assets-rc-circuit-light.png" width="100%">
+</picture>
+
+Whenever we deal with odd-order Butterworth filters,
