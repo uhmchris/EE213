@@ -2,7 +2,7 @@
 title: "Lowpass Butterworth Circuit Design"
 published: true 
 morea_id: reading-butterworth-lowpass
-morea_summary: "Designing a filter from order to circuit."
+morea_summary: "An example of designing a Butterworth lowpass filter."
 morea_url:
 morea_type: reading
 morea_labels:
