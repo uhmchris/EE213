@@ -9,8 +9,6 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Bundler Update
-        run: gem install bundler -v 2.4.22
       - name: GitHub Checkout
         uses: actions/checkout@v3
       - name: Bundler Cache
