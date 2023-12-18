@@ -16,4 +16,4 @@ morea_end_date: "2021-07-16"
 morea_labels:
 morea_sort_order: 40
 ---
-Understand convolution and how one can calculate it via the ``flip-and-shift'' method.
+Understand convolution and how to calculate it.
