@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Laplace Transform of RLC </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/module-laplaceinitial">Laplace with Initial Conditions</a></li>
+        <li class="breadcrumb-item active">Laplace Transform of RLC</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="laplace-transform-of-resistors-inductors-and-capacitors-with-initial-conditions">Laplace Transform of Resistors, Inductors, and Capacitors With Initial Conditions</h1>
+<h2 id="prerequisite-knowledge">Prerequisite Knowledge</h2>
+<p>Before continuing, you must have covered:</p>
+<ul>
+  <li>Voltage-current relationships for ideal resistors, capacitors, and inductors</li>
+  <li>Methods of circuit analysis</li>
+  <li>Laplace transformation</li>
+  <li>Inverse Laplace transformation</li>
+</ul>
+
+<h2 id="resistors">Resistors</h2>
+<center><img src="assets/timetos-domainvisual-resistor.png" width="800" alt="centered image" /> </center>
+
+<p>The Laplace transformation of a resistor’s impedence with a value of \(R\) is \(R\).</p>
+
+<p>The voltage-current relationship for a resistor in the time domain is</p>
+<div align="center"> $$v(t) = Ri(t)$$  </div>
+<p>By taking the Laplace transform, it is transformed into the s-domain</p>
+<div align="center"> $$V(s) = RI(s)$$ </div>
+
+<h2 id="inductors">Inductors</h2>
+<center><img src="assets/timetos-domainvisual-inductor.png" width="800" alt="centered image" /> </center>
+
+<p>Unlike resistors which dissipate energy and thus are independent of frequency (also expressed through Ohm’s Law), inductors store energy when <em>current</em> flows through them, and thus are frequency-dependent.</p>
+
+<p>This can also be expressed through the equation</p>
+<div align="center"> $$v_{L}(t) = L\frac{di_{L}(t)}{dt}$$ </div>
+
+<p>By using the Laplace transform (<a href="assets/LaplaceTransformTable.PNG">reference</a>), it is transformed into the s-domain.</p>
+<div align="center">
+$$\mathcal{L}(v_{L}(t)) = \mathcal{L}(L\frac{di_{L}(t)}{dt})$$
+$$V_{L}(s) = L[sI_{L}(s)-i_{L}(0^-)] $$  
+$$V_{L}(s) = sLI_{L}(s) - Li_{L}(0^{-})$$  
+$$V_{L}(s) - sLI_{L}(s) + Li_{L}(0^{-}) = 0$$
+</div>
+
+<p>The second equation might provide a better perspective of how each component contributes to the total voltage. Notice that in the s-domain of the table of circuits above, \(sLI_{L}(s)\) represents the voltage drop across the inductor, and \(Li_{L}(0^{-})\) represents the initial voltage going across the inductor when \(t=0\) in the form of a voltage source. Since inductors oppose changes in current, when the initial condition is applied as a voltage source, its polarity is opposite to the voltage across \(sL\). When applied as a current source, its direction is the same as the current across \(sL\).</p>
+
+<p>The voltage source can be tranformed into a current source using <strong>source transformation</strong> and be connected parallel to the inductor. This can also be obtained by isolating \(I_{L}(s)\) from the previous equations</p>
+<div align="center"> $$I_{L}(s) = \frac{V_{L}(s)}{sL} + \frac{i_{L}(0^-)}{s} $$  
+$$I_{L}(s) - \frac{V_{L}(s)}{sL} - \frac{i_{L}(0^-)}{s} = 0$$ </div>
+
+<p>The second equation might provide a better perspective of how the current is split between branches. Going back to the table, \(\frac{V_{L}(s)}{sL}\) represents the current going across the inductor, and \(\frac{i_{L}(0^-)}{s}\) represents the current that was initially going across the inductor when \(t=0\). Similarly, the current source can be transformed into a voltage source using source transformation, and be connected in series to the inductor.</p>
+
+<h2 id="capacitors">Capacitors</h2>
+<center><img src="assets/timetos-domainvisual-capacitor.png" width="800" alt="centered image" /> </center>
+
+<p>Similar to inductors, capacitors also store energy and are frequency-dependent, but it occurs when there’s <em>voltage</em> going across it.</p>
+
+<p>This can be expressed through the equation</p>
+<div align="center"> $$i_{C}(t) = C\frac{dv_{C}(t)}{dt}$$ </div>
+
+<p>By using the Laplace transform, it is transformed into the s-domain</p>
+<div align="center">
+$$\mathcal{L}(i_{C}(t)) = \mathcal{L}(C\frac{dv_{C}(t)}{dt}) $$  
+$$I_{C}(s) = C[sV_{C}(s) - v_{C}(0^{-})]$$  
+$$I_{C}(s) = sCV_{C}(s) - Cv_{C}(0^{-})$$
+$$I_{C}(s) - sCV_{C}(s) + Cv_{C}(0^{-}) = 0$$
+</div>
+
+<p>On the table above for capacitors, \(sCV_{C}(s)\) represents the current going across the capacitor, and \(Cv_{C}(0^{-})\) represents the current that was initially going across the capacitor when \(t=0\) in the form of a current source. Since capacitors oppose changes in voltage, its initial condition as a current source will have the opposite direction as the current going across the capacitor (\(\frac{1}{sC}\)). When the initial condition is applied as a voltage source, its polarity will be the same as the voltage going across \(\frac{1}{sC}\).</p>
+
+<p>The current source can also be transformed back into a voltage source in series with the capacitor using source transformation. Additionally, \(V_{C}(s)\) can be isolated from the previous equation, resulting in</p>
+<div align="center"> $$V_{C}(s) = \frac{I_{C}(s)}{sC} + \frac{v_{C}(0^{-})}{s}$$  
+$$V_{C}(s) - \frac{I_{C}(s)}{sC} - \frac{v_{C}(0^{-})}{s} = 0$$</div>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>

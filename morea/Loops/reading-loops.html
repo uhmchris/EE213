@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Loops </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/"></a></li>
+        <li class="breadcrumb-item active">Loops</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p>While loops:
+A while loop in Python is a control structure that repeatedly executes a block of code as long as a specified condition remains True. The loop continues to run until the condition becomes False. while loops are used when the number of iterations is not known beforehand or when you need to continuously perform an action until a certain condition is met.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using a while loop to count and display numbers
+</span><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In this example, the while loop counts and displays numbers from 1 to 5. While loops are useful for scenarios where you need to repeatedly execute a block of code while a condition remains True, and they provide flexibility for creating dynamic and interactive programs.</p>
+
+<p>For loops:
+A for loop in Python is a control structure used to iterate over a sequence of elements, such as lists, tuples, strings, or ranges. It executes a block of code for each element in the sequence, allowing you to process data, perform calculations, or automate tasks efficiently.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using a for loop to iterate over a list
+</span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'cherry'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+
+<span class="c1"># Using a for loop with the range() function
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Using a for loop to iterate over characters in a string
+</span><span class="n">word</span> <span class="o">=</span> <span class="s">'Python'</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, the for loop is used to iterate over different types of sequences, such as lists, and strings. It allows you to process each element in the sequence one by one, making it a versatile tool for various programming tasks. The range() function is commonly used to generate a sequence of numbers for iteration.</p>
+
+<p>Nested loops:
+Nested loops in Python refer to the practice of using one loop inside another loop. This allows you to perform more complex iterations, such as iterating over multiple sequences simultaneously or creating patterns with multiple levels of repetition. Nested loops are used to solve problems that involve multidimensional data or require repeated actions within a larger context.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using nested loops to create a multiplication table
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> * </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s"> = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">()</span>  <span class="c1"># Add a blank line after each row
+</span>
+<span class="c1"># Using nested loops to process a list of lists (matrix)
+</span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">()</span>  <span class="c1"># Move to the next row
+</span></code></pre></div></div>
+
+<p>Nested loops can be used to create a multiplication table and process a matrix (list of lists). Nested loops provide a way to handle multidimensional data structures and perform repetitive tasks within a larger context. However, be mindful of the potential complexity and performance implications when using deeply nested loops.</p>
+
+<p>#Break and continue
+Break and continue are two control statements in Python that allow you to modify the behavior of loops.
+The break statement is used to prematurely exit a loop, ending the loop’s execution even if the loop’s condition is still true.
+The continue statement is used to skip the rest of the current iteration of a loop and move on to the next iteration.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using break to exit a loop prematurely
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="c1"># Using continue to skip specific iterations
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The break statement is used to exit the loop as soon as the value 3 is encountered, resulting in only 1 and 2 being printed.
+The continue statement is used to skip the iteration when the value 3 is encountered, so only 1, 2, 4, and 5 are printed.
+Break and continue are useful when you need to control the flow of a loop based on certain conditions or when you want to avoid processing specific elements in a loop iteration.</p>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>

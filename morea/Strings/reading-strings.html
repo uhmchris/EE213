@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Strings </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/"></a></li>
+        <li class="breadcrumb-item active">Strings</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p>String slicing:
+String slicing in Python refers to the process of extracting a portion (substring) of a string by specifying a range of indices. The result is a new string that includes the characters from the specified start index up to (but not including) the end index. String slicing allows you to manipulate and extract parts of a string efficiently.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using string slicing to extract substrings
+</span><span class="n">message</span> <span class="o">=</span> <span class="s">'Hello world'</span>
+
+<span class="n">substring1</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>   <span class="c1"># Extracts characters from index 0 to 4 ("Hello")
+</span><span class="n">substring2</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="c1"># Extracts characters from index 6 to 10 ("world")
+</span><span class="n">substring3</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="c1"># Entire string ("Hello world")
+</span><span class="n">substring4</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>    <span class="c1"># Omitting end index defaults to end ("world")
+</span><span class="n">substring5</span> <span class="o">=</span> <span class="n">message</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>    <span class="c1"># Omitting start index defaults to beginning ("Hello")
+</span><span class="n">substring6</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>   <span class="c1"># Negative indices count from the end ("world")
+</span></code></pre></div></div>
+
+<p>In this example, various slices of the message string are extracted using string slicing. You can specify both the start and end indices to extract a specific range of characters. If the start index is omitted, it defaults to the beginning of the string. If the end index is omitted, it defaults to the end of the string. Negative indices can also be used to count positions from the end of the string. String slicing is a powerful feature that allows you to manipulate and extract meaningful portions of text from strings, making it particularly useful for text processing and manipulation tasks.</p>
+
+<p>String splitting:
+String splitting in Python refers to the process of breaking a string into a list of substrings based on a specified delimiter. The split() method is used to perform string splitting, and it returns a list of substrings created by dividing the original string wherever the delimiter occurs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using the split() method to split a string
+</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">'Python is a powerful programming language'</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>   <span class="c1"># Splits the string at spaces by default
+</span><span class="nf">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="s">'Python'</span><span class="p">,</span> <span class="s">'is'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'powerful'</span><span class="p">,</span> <span class="s">'programming'</span><span class="p">,</span> <span class="s">'language'</span><span class="p">]</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="s">"2023-08-08"</span>
+<span class="n">date_parts</span> <span class="o">=</span> <span class="n">date</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>  <span class="c1"># Splits the string at hyphens
+</span><span class="nf">print</span><span class="p">(</span><span class="n">date_parts</span><span class="p">)</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="s">'2023'</span><span class="p">,</span> <span class="s">'08'</span><span class="p">,</span> <span class="s">'08'</span><span class="p">]</span>
+
+<span class="n">csv_data</span> <span class="o">=</span> <span class="s">"Alice,30,Student"</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">csv_data</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">","</span><span class="p">)</span>  <span class="c1"># Splits the string at commas
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'30'</span><span class="p">,</span> <span class="s">'Student'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>In this example, the split() method is used to split the sentence string into a list of words based on spaces, the date string into a list of date parts based on hyphens, and the csv_data string into a list of fields based on commas. String splitting is commonly used for parsing and processing text data, such as reading CSV files, extracting information from strings with a known format, and handling input from users. It allows you to divide a string into meaningful segments that can be processed individually.</p>
+
+<p>String joining:
+String joining in Python refers to the process of combining multiple strings (or other iterable objects) into a single string using a specified delimiter. The join() method is used to perform string joining, where each element of the iterable is concatenated with the delimiter to create the final string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using the join() method to join strings
+</span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Python'</span><span class="p">,</span> <span class="s">'is'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'powerful'</span><span class="p">,</span> <span class="s">'programming'</span><span class="p">,</span> <span class="s">'language'</span><span class="p">]</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">' '</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>  <span class="c1"># Joining with a space delimiter
+</span><span class="nf">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="n">Output</span><span class="p">:</span> <span class="n">Python</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">powerful</span> <span class="n">programming</span> <span class="n">language</span>
+
+<span class="n">date_parts</span> <span class="o">=</span> <span class="p">[</span><span class="s">'2023'</span><span class="p">,</span> <span class="s">'08'</span><span class="p">,</span> <span class="s">'08'</span><span class="p">]</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s">'-'</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">date_parts</span><span class="p">)</span>  <span class="c1"># Joining with a hyphen delimiter
+</span><span class="nf">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+<span class="n">Output</span><span class="p">:</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">08</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'30'</span><span class="p">,</span> <span class="s">'Student'</span><span class="p">]</span>
+<span class="n">csv_data</span> <span class="o">=</span> <span class="s">','</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>  <span class="c1"># Joining with a comma delimiter
+</span><span class="nf">print</span><span class="p">(</span><span class="n">csv_data</span><span class="p">)</span>
+<span class="n">Output</span><span class="p">:</span> <span class="n">Alice</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="n">Student</span>
+</code></pre></div></div>
+
+<p>In this example, the join() method is used to join the elements of the words list into a single string with a space delimiter, the date_parts list into a date string with hyphen delimiters, and the fields list into a CSV data string with comma delimiters. String joining is commonly used for creating formatted strings, generating CSV data, constructing URLs, and other scenarios where you need to combine multiple elements into a single string with a specified separator.</p>
+
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>

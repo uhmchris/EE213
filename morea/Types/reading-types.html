@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Types </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/"></a></li>
+        <li class="breadcrumb-item active">Types</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p>String basics:
+A string in Python is a sequence of characters enclosed within single (‘ ‘) or double (“ “) quotes. Strings are used to represent text data and can contain letters, numbers, symbols, and whitespace. They are a fundamental data type and support various operations for manipulation and analysis.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating strings
+</span><span class="n">string1</span> <span class="o">=</span> <span class="s">"Hello, world!"</span>    <span class="c1"># Using double quotes
+</span><span class="n">string2</span> <span class="o">=</span> <span class="s">'Python is fun!'</span>   <span class="c1"># Using single quotes
+</span>
+<span class="c1"># Concatenating strings
+</span><span class="n">full_string</span> <span class="o">=</span> <span class="n">string1</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="n">string2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">full_string</span><span class="p">)</span>
+
+<span class="c1"># String indexing and slicing
+</span><span class="n">message</span> <span class="o">=</span> <span class="s">'Hello world!'</span>
+<span class="n">first_char</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Accessing the first character
+</span>
+<span class="c1"># String length
+</span><span class="n">length</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="c1"># String formatting
+</span><span class="n">name</span> <span class="o">=</span> <span class="s">'Alice'</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">info</span> <span class="o">=</span> <span class="s">'Name: {}, Age: {}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>  <span class="c1"># Using the format() method
+</span><span class="n">f_info</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">, Age: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s">'</span>          <span class="c1"># Using f-strings
+</span></code></pre></div></div>
+
+<p>In this example, various string operations are demonstrated, including string creation, concatenation, indexing, length calculation, and formatting. Strings are versatile and play a crucial role in text processing and manipulation tasks in Python.</p>
+
+<p>List basics:
+A list in Python is a mutable, ordered collection of items, enclosed within square brackets []. Lists can contain elements of different data types, including numbers, strings, and even other lists. Lists are versatile data structures used for storing, organizing, and manipulating collections of data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating lists
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span>
+<span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">'hello'</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
+
+<span class="c1"># Accessing list elements
+</span><span class="n">first_item</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1"># Accessing the first element
+</span><span class="n">second_item</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># Accessing the second element
+</span>
+<span class="c1"># Modifying list elements
+</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">'grape'</span>        <span class="c1"># Changing an element's value
+</span>
+<span class="c1"># List length
+</span><span class="n">num_items</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="c1"># List methods
+</span><span class="n">numbers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>          <span class="c1"># Adding an element to the end
+</span><span class="n">fruits</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'cherry'</span><span class="p">)</span> <span class="c1"># Inserting an element at a specific index
+</span><span class="n">removed_item</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>   <span class="c1"># Removing and returning the last element
+</span></code></pre></div></div>
+
+<p>In this example, various list operations are showcased, including list creation, element access, modification, length calculation, and method usage. Lists are fundamental data structures in Python, widely used for managing and manipulating collections of items.</p>
+
+<p>Tuple basics:
+A tuple in Python is an immutable, ordered collection of elements enclosed within parentheses (). Tuples are similar to lists, but unlike lists, their elements cannot be modified after creation. Tuples are often used to group related data together and represent fixed sets of values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating tuples
+</span><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>                <span class="c1"># Creating a 2-element tuple
+</span><span class="n">person</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Alice'</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>  <span class="c1"># Creating a tuple with mixed data types
+</span>
+<span class="c1"># Accessing tuple elements
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                   <span class="c1"># Accessing the first element
+</span><span class="n">name</span> <span class="o">=</span> <span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>               <span class="c1"># Accessing the first element
+</span>
+<span class="c1"># Tuple length
+</span><span class="n">num_elements</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, various tuple operations are demonstrated, including tuple creation, element access, and length calculation. Tuples are suitable for scenarios where data should not be modified after creation, such as representing coordinates, records, or fixed sets of related values.</p>
+
+<p>Set basics:
+A set in Python is an unordered collection of unique elements enclosed within curly braces {}. Sets are used to store distinct values and support various mathematical set operations such as union, intersection, and difference. Sets are mutable, allowing elements to be added or removed after creation.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating sets
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">}</span>
+
+<span class="c1"># Adding elements to a set
+</span><span class="n">numbers</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>                <span class="c1"># Adding a single element
+</span><span class="n">fruits</span><span class="p">.</span><span class="nf">update</span><span class="p">([</span><span class="s">'cherry'</span><span class="p">,</span> <span class="s">'apple'</span><span class="p">])</span>  <span class="c1"># Adding multiple elements
+</span>
+<span class="c1"># Removing elements from a set
+</span><span class="n">numbers</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>             <span class="c1"># Removing a specific element (raises an error if not present)
+</span><span class="n">fruits</span><span class="p">.</span><span class="nf">discard</span><span class="p">(</span><span class="s">'banana'</span><span class="p">)</span>      <span class="c1"># Removing a specific element (no error if not present)
+</span><span class="n">removed_item</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>  <span class="c1"># Removing and returning an arbitrary element
+</span>
+<span class="c1"># Set operations
+</span><span class="n">unique_fruits</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">.</span><span class="nf">union</span><span class="p">({</span><span class="s">'grape'</span><span class="p">,</span> <span class="s">'kiwi'</span><span class="p">})</span>  <span class="c1"># Union of two sets
+</span><span class="n">common_fruits</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">.</span><span class="nf">intersection</span><span class="p">({</span><span class="s">'banana'</span><span class="p">,</span> <span class="s">'apple'</span><span class="p">})</span>  <span class="c1"># Intersection of two sets
+</span><span class="n">different_fruits</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">.</span><span class="nf">difference</span><span class="p">({</span><span class="s">'banana'</span><span class="p">,</span> <span class="s">'apple'</span><span class="p">})</span>  <span class="c1"># Difference between two sets
+</span>
+<span class="c1"># Set membership and length
+</span><span class="n">is_in_set</span> <span class="o">=</span> <span class="s">'apple'</span> <span class="ow">in</span> <span class="n">fruits</span>  <span class="c1"># Checking if an element is in the set
+</span><span class="n">num_elements</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, various set operations are demonstrated, including set creation, adding and removing elements, set operations (union, intersection, difference), membership checking, and length calculation. Sets are useful for scenarios where you need to store unique values and perform mathematical set operations efficiently.</p>
+
+<p>Dictionary basics:
+A dictionary in Python is an unordered collection of key-value pairs enclosed within curly braces {}. Each key is associated with a value, forming a mapping that allows you to retrieve values using their corresponding keys. Dictionaries are versatile data structures used for storing and organizing data in a structured and efficient manner.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating dictionaries
+</span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'name'</span><span class="p">:</span> <span class="s">'Alice'</span><span class="p">,</span>
+    <span class="s">'age'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">'is_student'</span><span class="p">:</span> <span class="bp">True</span>
+<span class="p">}</span>
+
+<span class="c1"># Accessing dictionary values
+</span><span class="n">name</span> <span class="o">=</span> <span class="n">student</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">student</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span>
+
+<span class="c1"># Modifying dictionary values
+</span><span class="n">student</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">21</span>
+
+<span class="c1"># Adding new key-value pairs
+</span><span class="n">student</span><span class="p">[</span><span class="s">'grade'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+
+<span class="c1"># Removing key-value pairs
+</span><span class="k">del</span> <span class="n">student</span><span class="p">[</span><span class="s">'is_student'</span><span class="p">]</span>
+
+<span class="c1"># Dictionary methods
+</span><span class="n">keys</span> <span class="o">=</span> <span class="n">student</span><span class="p">.</span><span class="nf">keys</span><span class="p">()</span>       <span class="c1"># Get a list of keys
+</span><span class="n">values</span> <span class="o">=</span> <span class="n">student</span><span class="p">.</span><span class="nf">values</span><span class="p">()</span>   <span class="c1"># Get a list of values
+</span><span class="n">items</span> <span class="o">=</span> <span class="n">student</span><span class="p">.</span><span class="nf">items</span><span class="p">()</span>     <span class="c1"># Get a list of key-value pairs
+</span>
+<span class="c1"># Dictionary membership and length
+</span><span class="n">has_key</span> <span class="o">=</span> <span class="s">'grade'</span> <span class="ow">in</span> <span class="n">student</span>   <span class="c1"># Checking if a key is in the dictionary
+</span><span class="n">num_entries</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, various dictionary operations are demonstrated, including dictionary creation, value access and modification, adding and removing key-value pairs, dictionary methods (keys, values, items), membership checking, and length calculation. Dictionaries are highly useful for tasks that involve mapping keys to values and organizing data based on meaningful associations.</p>
+
+<p>Type conversions:
+Type conversions, also known as type casting or type coercion, refer to the process of converting a value from one data type to another. Python provides built-in functions and techniques to perform various type conversions, enabling you to manipulate and process data of different types as needed.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Integer to Float
+</span><span class="n">int_value</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">float_value</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">int_value</span><span class="p">)</span>
+
+<span class="c1"># Float to Integer
+</span><span class="n">float_number</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">int_number</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">float_number</span><span class="p">)</span>
+
+<span class="c1"># Integer to String
+</span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">number_str</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="c1"># String to Integer
+</span><span class="n">string_number</span> <span class="o">=</span> <span class="s">'20'</span>
+<span class="n">int_string</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">string_number</span><span class="p">)</span>
+
+<span class="c1"># String to Float
+</span><span class="n">float_string</span> <span class="o">=</span> <span class="s">'3.14159'</span>
+<span class="n">float_number</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">float_string</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, various type conversions are demonstrated, such as converting between integers, floats, and strings. These conversions are essential for manipulating data, performing calculations, and adapting data types to suit specific programming needs.</p>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>

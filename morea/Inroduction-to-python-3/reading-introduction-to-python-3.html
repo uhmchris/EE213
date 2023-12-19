@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Introduction to python 3 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/"></a></li>
+        <li class="breadcrumb-item active">Introduction to python 3</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p>Print:
+The print statement in Python is a built-in function used to display textual or variable content in the console or terminal. It allows developers to output information for debugging, user interaction, or general program communication. The print() function accepts one or more arguments, which can be strings, variables, or expressions, and displays their values as text.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Display a simple message
+</span><span class="nf">print</span><span class="p">(</span><span class="s">'Hello world!'</span><span class="p">)</span>
+
+<span class="c1"># Print the result of an expression
+</span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'The sum of x and y is:'</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this example, the print() statements output various messages and the result of an expression to the console. The output helps developers understand program behavior and aids in the debugging and development process.</p>
+
+<p>Comment:
+Comments in Python are textual annotations that provide explanations, context, or notes within the source code. They are preceded by the hash symbol # and are ignored by the Python interpreter during program execution. Comments enhance code readability, aid in documentation, and facilitate collaboration among developers.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a single-line comment
+</span><span class="nf">print</span><span class="p">(</span><span class="s">'Hello world!'</span><span class="p">)</span>  <span class="c1"># This is a comment explaining the print statement
+</span></code></pre></div></div>
+
+<p>In this example, the comments provide additional information about the code’s purpose and functionality, making it easier for developers to understand the logic and intent behind the code.</p>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>

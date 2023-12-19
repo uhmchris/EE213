@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Inverse Laplace Transform </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/module-inverselaplace">Inverse Laplace</a></li>
+        <li class="breadcrumb-item active">Inverse Laplace Transform</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="performing-inverse-laplace-transfrom">Performing Inverse Laplace Transfrom</h1>
+
+<h2 id="prerequiste-knowledge">Prerequiste Knowledge</h2>
+<p>Before continuing to the inverse Laplace transform, you must be able to do:</p>
+<ul>
+  <li>Laplace Transform</li>
+  <li>Algebra</li>
+  <li>Calculus II</li>
+</ul>
+
+<h2 id="applications-of-inverse-laplace-transform">Applications of Inverse Laplace Transform</h2>
+<ol>
+  <li>Laplace RLC circuit analysis</li>
+  <li>Step Response</li>
+  <li>Impulse Response</li>
+  <li>Natural Response</li>
+  <li>Forced Response</li>
+  <li>Complete Response</li>
+</ol>
+
+<h2 id="steps-for-performing-inverse-laplace-transform">Steps for performing Inverse Laplace transform</h2>
+<ol>
+  <li>Convert transfer function into standard form</li>
+  <li>Perform Residue Method</li>
+  <li>Perform Inverse Laplace Transfrom (with Laplace chart)</li>
+  <li>Simplify the expression</li>
+</ol>
+
+<h2 id="inverse-laplace-transform">Inverse Laplace Transform</h2>
+<h3 id="three-common-inverse-laplace-transforms">Three Common Inverse Laplace Transforms</h3>
+<center><img src="assets/Example1.png" width="500" alt="centered image" /> </center>
+<p>In example 1, we focus on the denominator to see how to produce the equation for the residue method. The denominator is the key factor in identifying the equation to eventually solve for the inverse Laplace transform. Since the denominator for this example is two poles, (s+1) and (s+3), we know that the equivalent equation would be:</p>
+<center><img src="assets/Example1a.png" width="400" alt="centered image" /> </center>
+
+<center><img src="assets/Example2.png" width="700" alt="centered image" /> </center>
+<p>In example 2, we will use the same approach. However, we can notice that there is a repeated pole in the denominator. The equivalent equation would be slighlty different than the first example and would look like this:</p>
+<center><img src="assets/Example2a.png" width="700" alt="centered image" /> </center>
+
+<center><img src="assets/Example3.png" width="700" alt="centered image" /> </center>
+<p>In example 3, the first thing to identify in this problem is the denominator. Factoring out an s will leave the denominator as a polynomial and factored s. This will change the equivalent equation for the residue method. With the polynomial having an As+B in the numerator. The equation would look like this:</p>
+<center><img src="assets/Example3a.png" width="700" alt="centered image" /> </center>
+
+<p>These are the main three inverse Laplace transforms that will be seen through this course.</p>
+<h3 id="example-1">Example 1</h3>
+<center><img src="assets/Example1_1.png" width="700" alt="centered image" /> </center>
+<p>Step 1. First you want to set up the residue method.</p>
+
+<center><img src="assets/Example1_2.png" width="700" alt="centered image" /> </center>
+<p>Step 2. Multiply both terms by their denominator.</p>
+
+<center><img src="assets/Example1_3.png" width="700" alt="centered image" /> </center>
+<p>Step 3. Collect like terms for A and B.</p>
+
+<center><img src="assets/Example1_4.png" width="700" alt="centered image" /> </center>
+<p>Step 4. Set up equations to solve for values of A and B.</p>
+
+<center><img src="assets/Example1_5.png" width="400" alt="centered image" /> </center>
+<p>Step 5. Solve for values of A and B.</p>
+
+<center><img src="assets/Example1_6.png" width="700" alt="centered image" /> </center>
+<p>Step 6. Reincorporate A and B into original equation.</p>
+
+<center><img src="assets/Example1_7.png" width="600" alt="centered image" /> </center>
+<p>Step 7. Take Inverse Laplace transform to get final answer. (Use Laplce transform chart)</p>
+
+<h3 id="example-2">Example 2</h3>
+<center><img src="assets/Example2_1.png" width="700" alt="centered image" /> </center>
+<p>Step 1. Like the first example you want to start with setting up the residue method, however this equation will be different as there is a repeated pole in the denominator.</p>
+
+<center><img src="assets/Example2_2.png" width="700" alt="centered image" /> </center>
+<p>Step 2. Multiply terms by other denominators to get a common denominator.</p>
+
+<center><img src="assets/Example2_3.png" width="700" alt="centered image" /> </center>
+<p>Step 3. Simplify</p>
+
+<center><img src="assets/Example2_4.png" width="600" alt="centered image" /> </center>
+<p>Step 4. Set up equations to solve for A, B, and C</p>
+
+<center><img src="assets/Example2_5.png" width="500" alt="centered image" /> </center>
+<p>Step 5. Solve for A in equation 4A+8B+4C=12. Also solve for B in B+C=0.</p>
+
+<center><img src="assets/Example2_6.png" width="300" alt="centered image" /> </center>
+<p>Step 6. Input the value of A and B from step 5 in A+6B+4C=0, and solve for A, B, and C.</p>
+
+<center><img src="assets/Example2_7.png" width="700" alt="centered image" /> </center>
+<p>Step 7. Input the values for A, B, and C into original residue equation.</p>
+
+<center><img src="assets/Example2_8.png" width="700" alt="centered image" /> </center>
+<p>Step 8. Take the inverse Laplace of step 7 to solve for the final answer. (Use Laplce transform chart)</p>
+
+<h3 id="example-3">Example 3</h3>
+<center><img src="assets/Example3_1.png" width="700" alt="centered image" /> </center>
+<p>Step 1. Factor denominator</p>
+
+<center><img src="assets/Example3_2.png" width="700" alt="centered image" /> </center>
+<p>Step 2. Like the first example you want to start with setting up the residue method, however this equation will be different as there is a polynomial in the denominator.</p>
+
+<center><img src="assets/Example3_3.png" width="700" alt="centered image" /> </center>
+<p>Step 3. Multiply terms by other denominators to get a common denominator.</p>
+
+<center><img src="assets/Example3_4.png" width="700" alt="centered image" /> </center>
+<p>Step 4. Simplify and multiply A, B, and C out.</p>
+
+<center><img src="assets/Example3_5.png" width="700" alt="centered image" /> </center>
+<p>Step 5. Gather like terms to set up equations to solve for A, B, and C.</p>
+
+<center><img src="assets/Example3_6.png" width="700" alt="centered image" /> </center>
+<p>Step 6. Solve for A, B, and C.</p>
+
+<center><img src="assets/Example3_7.png" width="700" alt="centered image" /> </center>
+<p>Step 7. Input A, B, and C back into original equation</p>
+
+<center><img src="assets/Example3_8.png" width="700" alt="centered image" /> </center>
+<p>Step 8. Inverse Laplace, however we need to reconstruct the equation so it matches one of the Laplace transform properties.</p>
+
+<center><img src="assets/Example3_9.png" width="700" alt="centered image" /> </center>
+<p>Step 9. Seperate terms and factor out a two</p>
+
+<center><img src="assets/Example3_10.png" width="700" alt="centered image" /> </center>
+<p>Step 10. Add a (2-2) to numerator with s, and add (4-4) to denominator. This will allow the denominator to be equivalent to the final inverse Laplace transform from the table. Note((2-2)=0 and (4-4)=0 so adding this into the numerator and denominator does not change the equation.)</p>
+
+<center><img src="assets/Example3_11.png" width="700" alt="centered image" /> </center>
+<p>Step 11.  Simplify equation and multiply numerator of -2 by 3/3, which is 1.</p>
+
+<center><img src="assets/Example3_12.png" width="700" alt="centered image" /> </center>
+<p>Step 12.  Take the inverse laplce transform of the equation to get final answer (use Laplace transform chart).</p>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>

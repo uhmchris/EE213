@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> EE213Fall-23 | Transfer Functions & Frequency Response </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/EE213/css/themes/cerulean-purple/bootstrap.min.css">
+  <link rel="stylesheet" href="/EE213/css/style.css">
+  <link rel="stylesheet" href="/EE213/css/syntax.css">
+  <link rel="shortcut icon" href="/EE213/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/EE213/index.html"> EE213Fall-23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/prerequisites/">Prerequisites</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/EE213/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/EE213/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/EE213/modules/module-transferfreq">Transfer Function and Frequency Response</a></li>
+        <li class="breadcrumb-item active">Transfer Functions & Frequency Response</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="transfer-functions-and-frequency-response">Transfer Functions and Frequency Response</h1>
+
+<h3 id="transfer-function">Transfer Function</h3>
+
+<p>Using phasors, we learned to solve circuit values for specific frequencies. In reality, sources can be a combination of frequencies. To determine how circuits perform under these conditions we need to utilize the <strong>transfer function</strong>.</p>
+
+<p>In general the transfer function takes the form <strong>\(\frac{out}{in}\)</strong>. It is a comparison of the output to the input. We generally solve voltages or currents as inputs and outputs. There are four possible types of transfer functions:</p>
+
+<ul>
+  <li>
+    <p>Voltage gain - \(\frac{V_o}{V_i}\)</p>
+  </li>
+  <li>
+    <p>Current gain - \(\frac{I_o}{I_i}\)</p>
+  </li>
+  <li>
+    <p>Transfer Impedance - \(\frac{V_o}{I_i}\)</p>
+  </li>
+  <li>
+    <p>Transfer Admittance - \(\frac{I_o}{V_i}\)</p>
+  </li>
+</ul>
+
+<h4 id="frequency-domain-s-vs-time-domain-t">Frequency Domain (s) vs. Time Domain (t)</h4>
+
+<p>Transfer functions can be written as both a function of time (h(t)) and a function of frequency (H(s)). We find H(s) to be most useful for us in this course. We can easily convert between the two domains using Laplace transforms, which will be discussed later.</p>
+
+<p>Hint: When given a problem in the time domain, it is okay to convert to the frequency domain. However, remember to convert back to the time domain!</p>
+
+<h3 id="frequency-response---bode-plots">Frequency Response - Bode Plots</h3>
+
+<p>We can plot the magnitude and phase of H(s) to see how it varies with frequency. We need the function to be in a specific form.</p>
+
+<p>\(H(s) = \frac{N(s)}{D(s)}\) where N(s) &amp; D(s) are polynomials</p>
+
+<p>N(s) has the form: \(as^{n} + bs^{n-1} + cs^{n-2} + \cdots + ys + z\)</p>
+
+<p>D(s) should have same form, we’ll use: \(vs^{n} + ws^{n-1} + xs^{n-2} + \cdots + ys + z\)</p>
+
+<h4 id="straight-line-approximations">Straight Line Approximations</h4>
+
+<p>Using the standard form of the transfer function H($\omega$), we plot each factor separately and then add them together to get the final approximation.</p>
+
+<ol>
+  <li>Rearrange the transfer function so that it is in the form:</li>
+</ol>
+
+\[H(\omega) = \frac{K(j\omega)^{±1}(1 + j\omega/z_{1})[1 + j2\xi\omega/\omega_{k} + (j\omega/\omega_{k})^{2}] \cdots}{(1 + j\omega/p_{1})[1 + j2\xi_{2}\omega/\omega_{n} + (j\omega/\omega_{n})^{2}] \cdots}\]
+
+<ol>
+  <li>
+    <p>Using \(H_{dB} = 20\log_{10} \vert H \vert\) to convert the gain K to decibels</p>
+  </li>
+  <li>
+    <p>Determine zeros (numerator) &amp; poles (denominator) and use the <a href="assets/BodePlotCheatSheet.png">bode plot chart</a> to graph</p>
+  </li>
+  <li>
+    <p>Graph the final approximation line</p>
+  </li>
+</ol>
+
+<p>This <a href="assets/BodePlotsByHand.pdf">reading</a> provides a more detailed description of how to plot bode plots by hand. Here are some <a href="assets/BodePlotEstimations.pdf">extra practice problems</a>.</p>
+
+<p>The bode plot chart is an extremely helpful tool, be sure to understand it!</p>
+
+<h4 id="matlab-code">Matlab Code</h4>
+
+<p>Using Matlab we can create bode plots using the command freqs() or bode().</p>
+
+<ul>
+  <li>
+    <p>A vector for the coefficients of the numberator can be created as [a b c d e]</p>
+  </li>
+  <li>
+    <p>A vector the the coefficients of the denominator can be created as [v w x y z]</p>
+  </li>
+</ul>
+
+<p>Using the transfer function, \(H(s) = \frac{1}{s + 1}\)the following code can be used:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt;&gt; num = [1];</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt;&gt; den = [1 1];</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt;&gt; freqs(num,den)</code> or <code class="language-plaintext highlighter-rouge">&gt;&gt;bode(num,den)</code></p>
+
+<p>A shortcut to write this code is:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt;&gt;freqs([1], [1 1])</code> or <code class="language-plaintext highlighter-rouge">&gt;&gt; bode([1], [1 1])</code></p>
+
+<p><img src="assets/freqs.png" alt="Butterworth Filter Denominators" width="800" />
+<img src="assets/bode.png" alt="Butterworth Filter Denominators" width="800" /></p>
+
+<p>The bode command will output the frequency response with the magnitude in decibels (dB). This plot is easier to compare with your straight line approximations.</p>
+
+<h4 id="converting-to-decibels">Converting to Decibels</h4>
+
+<p>To convert \(\vert H \vert\) to \(H_{dB}\) we use the equation \(H_{dB} = 20log_{10}\vert H\vert\).</p>
+
+<p>It is important to note that in this course we use the half power frequency to determine the cutoff frequency. That is when \(\vert H \vert \le \frac{1}{\sqrt{2}}\) or \(H_{dB} \le -3 dB\), an input signal is considered cutoff or filtered out.</p>
+
+<h3 id="analysis-using-physical-arguments">Analysis Using Physical Arguments</h3>
+
+<p>It is possible to predict the output of the circuit by using physical arguments and analyzing at very low and very high frequencies. We can use this analysis method to predict what type of filter a circuit is.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Frequency</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Very low (\(\omega → 0\)) (\(\omega = 0\) is DC)</td>
+      <td>Capacitor acts as break, inductor acts as wire</td>
+    </tr>
+    <tr>
+      <td>Very high (\(\omega → \infty\))</td>
+      <td>Capacitor acts as wire, inductor acts as break</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Apply these rules to the circuit and examine the output of the circuit. E.g. If at very low frequencies the output is the same as the input and at high frequencies the output is zero, then this is a lowpass filter (passes low frequencies).</p>
+
+<h4 id="example-falstad">Example (Falstad)</h4>
+
+<p>Consider the circuit below (linked <a href="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmALNVA2AnGbBmZZTVIyVEQkJBSagUwFowwAoAN3GQA4VvewPLrzoRkdJHSnQErAE7DF+bhUEjwrAMaUVS3T3UQY5BETCoEAdmzJ8FwdgrHIbAO46KBxV8isA5t78SuJQUKwA9uAgJKGokNjY4HSYGKHIUfgRKNFOIHEJULCW3IJIKbnp6ZlAA">here</a>)</p>
+
+<p><img src="assets/circuit1.png" alt="lowpass circuit" /></p>
+
+<p>The input is a voltage of arbitrary frequency, and the output is the voltage across the capacitor. This means that the transfer function would be \(H(s) = \frac{V~o}{V~i} = \frac{1}{s + 1}\) where \(s = j\omega\).
+You can verify this using basic circuit analysis.</p>
+
+<p>It is important to note that the transfer function is not a function of time but rather a function of frequency (s-domain).</p>
+
+<p>Using the physical arguments above we can analyze the circuit at very low and very high frequencies.</p>
+
+<p>In this case we see that…</p>
+
+<ul>
+  <li>
+    <p>As \(\omega → 0\) (very low frequency): \(H(s) = 1\)</p>
+  </li>
+  <li>
+    <p>As \(\omega → \infty\) (very high frequency): \(H(s) = 0\)</p>
+  </li>
+</ul>
+
+<p>We can conclude that this is a <strong>lowpass filter</strong>. Low frequency inputs pass through the filter and high frequency outputs are filtered out.</p>
+
+<h3 id="experiment">Experiment</h3>
+
+<p>Try using the simulator link above to the circuit. You can vary the input frequency from 0 Hz to 25k Hz. Compare the input amplitude with the output amplitude for different frequencies. What do you notice?</p>
+
+<h3 id="try-it-yourself">Try it yourself</h3>
+
+<p>Given the circuit linked (<a href="https://tinyurl.com/2a8o6xpp">here</a>). The input is the voltage source and the output is the voltage across the resistor.</p>
+
+<p><img src="assets/falstadcircuit.png" alt="falstad circuit example" /></p>
+
+<ol>
+  <li>
+    <p>Use physical arguments to solve the value of the transfer function at very low and very high frequencies. Is this a lowpass? or highpass filter?</p>
+  </li>
+  <li>
+    <p>Solve the transfer function \(H(s) = \frac{V_o}{V_s}\). Is this consistent with your answer for part 1?</p>
+  </li>
+  <li>
+    <p>Draw the straight line approximation of the the bode plot</p>
+  </li>
+  <li>
+    <p>Plot the frequency response in Matlab. Is this consistent with your answer for part 3?</p>
+  </li>
+</ol>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/EE213/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Philip Johnson | Information and Computer Sciences | University of Hawaii <br />
+johnson@hawaii.edu<br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: cerulean-purple)<br>
+      Last update on: <span>2023-12-18 20:20:43 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      1 prerequisites |
+      
+      7 modules
+      
+      | 9 outcomes
+      
+      
+      | 36 readings
+      
+      
+      | 23 experiences
+      
+      
+      | 8 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>
