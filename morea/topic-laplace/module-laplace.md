@@ -1,15 +1,16 @@
 ---
-title: "Transfer Function and Frequency Response"
+title: "Laplace Transform"
 published: true
 morea_coming_soon: false
-morea_id: module-transferfreq
+morea_id: module-laplace
 morea_prerequisites:
 morea_outcomes:
-  - outcome-transferfreq
+  - outcome-laplace
 morea_readings:
-  - reading-transferfreq
+  - reading-laplace
+  - reading-laplacepdf
 morea_experiences:
-  # - experience-CHANGE-ME
+ - experience-laplace
 morea_assessments:
   # - assessment-CHANGE-ME
 morea_type: module
@@ -17,7 +18,8 @@ morea_type: module
 morea_start_date: "2021-07-12"
 morea_end_date: "2021-07-16"
 morea_labels:
-morea_sort_order: 2
+morea_sort_order: 4
 ---
 
-Understand transfer functions and frequency response.
+An introduction to Laplace transformation of differential equations.
+

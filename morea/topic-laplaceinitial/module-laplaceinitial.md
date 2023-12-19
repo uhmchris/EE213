@@ -8,14 +8,16 @@ morea_outcomes:
    - outcome-laplaceinitial
 morea_readings:
    - reading-laplaceinitial-RLC
+   - reading-laplacecircuit
    - reading-laplaceinitial-pdf
    - reading-laplacetable
+   - reading-laplacevisual
 morea_experiences:
    - experience-laplaceinitial-hw7
 morea_assessments:
    - assessment-laplaceinitial
 morea_type: module
-# morea_icon_url: /morea/topic-laplaceinitial/laplaceinitial.png
+  # morea_icon_url: /morea/topic-laplaceinitial/laplaceinitial.png
 morea_start_date: "2021-07-12"
 morea_end_date: "2021-07-16"
 morea_labels:

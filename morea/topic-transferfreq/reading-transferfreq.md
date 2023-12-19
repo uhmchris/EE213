@@ -51,11 +51,11 @@ $$H(\omega) = \frac{K(j\omega)^{±1}(1 + j\omega/z_{1})[1 + j2\xi\omega/\omega_{
 
 2. Using $$H_{dB} = 20\log_{10} \vert H \vert $$ to convert the gain K to decibels
 
-3. Determine zeros (numerator) & poles (denominator) and use the [bode plot chart](BodePlotCheatSheet.png) to graph
+3. Determine zeros (numerator) & poles (denominator) and use the [bode plot chart](assets/BodePlotCheatSheet.png) to graph
 
 4. Graph the final approximation line
 
-This [reading](BodePlotsByHand.pdf) provides a more detailed description of how to plot bode plots by hand. Here are some [extra practice problems](BodePlotEstimations.pdf).
+This [reading](assets/BodePlotsByHand.pdf) provides a more detailed description of how to plot bode plots by hand. Here are some [extra practice problems](assets/BodePlotEstimations.pdf).
 
 The bode plot chart is an extremely helpful tool, be sure to understand it!  
 
@@ -79,8 +79,8 @@ A shortcut to write this code is:
 
 `>>freqs([1], [1 1])` or `>> bode([1], [1 1])`
   
-<img src="freqs.png" alt="Butterworth Filter Denominators" width="800"/>
-<img src="bode.png" alt="Butterworth Filter Denominators" width="800"/>
+<img src="assets/freqs.png" alt="Butterworth Filter Denominators" width="800"/>
+<img src="assets/bode.png" alt="Butterworth Filter Denominators" width="800"/>
 
 The bode command will output the frequency response with the magnitude in decibels (dB). This plot is easier to compare with your straight line approximations.
 
@@ -106,7 +106,7 @@ Apply these rules to the circuit and examine the output of the circuit. E.g. If 
 
 Consider the circuit below (linked [here](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmALNVA2AnGbBmZZTVIyVEQkJBSagUwFowwAoAN3GQA4VvewPLrzoRkdJHSnQErAE7DF+bhUEjwrAMaUVS3T3UQY5BETCoEAdmzJ8FwdgrHIbAO46KBxV8isA5t78SuJQUKwA9uAgJKGokNjY4HSYGKHIUfgRKNFOIHEJULCW3IJIKbnp6ZlAA))
 
-![lowpass circuit](circuit1.png)
+![lowpass circuit](assets/circuit1.png)
 
 The input is a voltage of arbitrary frequency, and the output is the voltage across the capacitor. This means that the transfer function would be $$H(s) = \frac{V~o}{V~i} = \frac{1}{s + 1}$$ where $$s = j\omega$$.
 You can verify this using basic circuit analysis.
@@ -136,7 +136,7 @@ Try using the simulator link above to the circuit. You can vary the input freque
 
 Given the circuit linked ([here](https://tinyurl.com/2a8o6xpp)). The input is the voltage source and the output is the voltage across the resistor.
 
-![falstad circuit example](falstadcircuit.png)
+![falstad circuit example](assets/falstadcircuit.png)
 
 1. Use physical arguments to solve the value of the transfer function at very low and very high frequencies. Is this a lowpass? or highpass filter?
 

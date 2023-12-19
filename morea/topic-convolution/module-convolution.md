@@ -14,6 +14,6 @@ morea_type: module
 morea_start_date: "2021-07-12"
 morea_end_date: "2021-07-16"
 morea_labels:
-morea_sort_order: 40
+morea_sort_order: 6
 ---
 Understand convolution and how to calculate it.

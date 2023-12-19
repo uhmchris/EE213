@@ -17,7 +17,7 @@ morea_icon_url: #/morea/filters-2/filters-2.png
 morea_start_date: "2021-07-12"
 morea_end_date: "2021-07-16"
 morea_labels:
-morea_sort_order: 40
+morea_sort_order: 8
 ---
 Understand and design a Butterworth filter, given specifications of cutoff
 frequency, order, and/or attenuation requirements.
