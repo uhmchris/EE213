@@ -4,7 +4,7 @@
 # SITE SPECIFIC: The following fields are typically changed for each site
 name: EE213Fall-23
 baseurl: /EE213
-morea_theme: spacelab
+morea_theme: cerulean-purple
 timezone: Pacific/Honolulu
 morea_navbar_items:
   - Prerequisites
